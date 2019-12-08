@@ -5,10 +5,19 @@
     </div>
 </template>
 <script>
-
+import {reqFoodCategorys} from './api'
+import {mapActions} from 'vuex'
 import FooterGuide from './components/footerGuide/FooterGuide.vue'
 export default {
+    mounted() {
+    //    this.$store.dispatch('getAddress')
+        this.getAddress()
+        this.getUserInfo()
 
+    },
+    methods: {
+        ...mapActions(['getAddress','getUserInfo'])
+    },
     components:{
         FooterGuide
     }
